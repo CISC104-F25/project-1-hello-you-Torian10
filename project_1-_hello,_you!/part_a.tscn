@@ -12,4 +12,4 @@ transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, 0, 0, 0)
 mesh = SubResource("PlaneMesh_m6jki")
 surface_material_override/0 = SubResource("StandardMaterial3D_ys316")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
