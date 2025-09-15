@@ -1,4 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=17 format=3 uid="uid://clwrsdsnmy3md"]
+
+[ext_resource type="PackedScene" uid="uid://4sy4oeoj170" path="res://CAR.tscn" id="1_ys316"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m6jki"]
 
@@ -99,3 +101,6 @@ mesh = SubResource("TubeTrailMesh_e7awo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78825, 1.48082, 1.8711)
 mesh = SubResource("PrismMesh_j0tu7")
 surface_material_override/0 = SubResource("StandardMaterial3D_3xb3d")
+
+[node name="CAR" parent="." instance=ExtResource("1_ys316")]
+transform = Transform3D(0.0212694, 0, 0.416565, 0, 0.456169, 0, -0.371929, 0, 0.023822, 0, 0.318991, 1.632)
