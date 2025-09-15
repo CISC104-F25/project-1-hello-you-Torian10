@@ -1,6 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=21 format=3 uid="uid://clwrsdsnmy3md"]
 
 [ext_resource type="PackedScene" uid="uid://4sy4oeoj170" path="res://CAR.tscn" id="1_ys316"]
+[ext_resource type="PackedScene" uid="uid://clhttn3a0ep70" path="res://part_c.tscn" id="2_to4tk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_to4tk"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(1.2774, 1.26964, 1.26065, 1)
+ground_horizon_color = Color(1.2774, 1.26964, 1.26065, 1)
+
+[sub_resource type="Sky" id="Sky_0jsbj"]
+sky_material = SubResource("ProceduralSkyMaterial_to4tk")
+
+[sub_resource type="Environment" id="Environment_q6bo7"]
+background_mode = 2
+sky = SubResource("Sky_0jsbj")
+tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m6jki"]
 
@@ -42,6 +56,9 @@ albedo_color = Color(1, 0.435294, 1, 1)
 
 [node name="Part_A" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q6bo7")
+
 [node name="PlaceholderFloor" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, 0, -0.0137864, 0)
 mesh = SubResource("PlaneMesh_m6jki")
@@ -53,7 +70,7 @@ mesh = SubResource("PlaneMesh_ys316")
 surface_material_override/0 = SubResource("StandardMaterial3D_m6jki")
 
 [node name="Floor3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63986, 0.0273814, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63986, 0.0170903, 0)
 mesh = SubResource("PlaneMesh_ys316")
 surface_material_override/0 = SubResource("StandardMaterial3D_to4tk")
 
@@ -104,3 +121,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3xb3d")
 
 [node name="CAR" parent="." instance=ExtResource("1_ys316")]
 transform = Transform3D(0.0212694, 0, 0.416565, 0, 0.456169, 0, -0.371929, 0, 0.023822, 0, 0.318991, 1.632)
+
+[node name="Part_C" parent="." instance=ExtResource("2_to4tk")]
+anchor_right = 0.97
+anchor_bottom = 0.715
+offset_left = 544.0
+offset_top = -12.0
+offset_right = -151.44
+offset_bottom = -201.32
+
+[node name="Camera3D" type="Camera3D" parent="."]
