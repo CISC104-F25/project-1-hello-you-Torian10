@@ -1,15 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=7 format=3 uid="uid://clwrsdsnmy3md"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m6jki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys316"]
 albedo_color = Color(0.21448, 0.1344, 0.28, 1)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_ys316"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_to4tk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0jsbj"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_q6bo7"]
+
 [node name="Part_A" type="Node3D"]
 
 [node name="PlaceholderFloor" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, 0, 0, 0)
+transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, 0, -0.0137864, 0)
 mesh = SubResource("PlaneMesh_m6jki")
 surface_material_override/0 = SubResource("StandardMaterial3D_ys316")
 
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0273814, 0)
+mesh = SubResource("PlaneMesh_ys316")
+
+[node name="Floor2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00605208, 0.0273814, 1.65581)
+mesh = SubResource("PlaneMesh_ys316")
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.048135, 0.997844, -0.0446138, -0.998841, -0.048087, 0.00214998, -2.69397e-10, 0.0446656, 0.999002, -0.933979, 0.694303, -0.00533748)
+mesh = SubResource("PlaneMesh_to4tk")
+
+[node name="wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00364126, 0.0695627, -0.997571, -0.999985, -0.00431533, 0.00334914, -0.00407188, 0.997568, 0.0695774, 0.0775314, 0.690407, -0.982535)
+mesh = SubResource("PlaneMesh_to4tk")
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33802, 0)
+mesh = SubResource("BoxMesh_0jsbj")
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31067, 0)
+mesh = SubResource("PrismMesh_q6bo7")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
