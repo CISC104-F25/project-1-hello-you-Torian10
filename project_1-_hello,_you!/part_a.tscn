@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://clwrsdsnmy3md"]
+[gd_scene load_steps=16 format=3 uid="uid://clwrsdsnmy3md"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m6jki"]
 
@@ -7,11 +7,36 @@ albedo_color = Color(0.21448, 0.1344, 0.28, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ys316"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6jki"]
+albedo_color = Color(0.139367, 0.482059, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to4tk"]
+albedo_color = Color(0.139367, 0.482059, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jsbj"]
+albedo_color = Color(0.139367, 0.482059, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6bo7"]
+albedo_color = Color(0.139367, 0.482059, 0, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_to4tk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0jsbj"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eso0h"]
+albedo_color = Color(1, 0.388235, 0.356863, 1)
+
 [sub_resource type="PrismMesh" id="PrismMesh_q6bo7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trumw"]
+albedo_color = Color(1, 1, 0.294118, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_e7awo"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_j0tu7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xb3d"]
+albedo_color = Color(1, 0.435294, 1, 1)
 
 [node name="Part_A" type="Node3D"]
 
@@ -23,27 +48,54 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ys316")
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0273814, 0)
 mesh = SubResource("PlaneMesh_ys316")
+surface_material_override/0 = SubResource("StandardMaterial3D_m6jki")
+
+[node name="Floor3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63986, 0.0273814, 0)
+mesh = SubResource("PlaneMesh_ys316")
+surface_material_override/0 = SubResource("StandardMaterial3D_to4tk")
+
+[node name="Floor4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63986, 0.0273814, 1.65031)
+mesh = SubResource("PlaneMesh_ys316")
+surface_material_override/0 = SubResource("StandardMaterial3D_0jsbj")
 
 [node name="Floor2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00605208, 0.0273814, 1.65581)
 mesh = SubResource("PlaneMesh_ys316")
+surface_material_override/0 = SubResource("StandardMaterial3D_q6bo7")
 
 [node name="Wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.048135, 0.997844, -0.0446138, -0.998841, -0.048087, 0.00214998, -2.69397e-10, 0.0446656, 0.999002, -0.933979, 0.694303, -0.00533748)
+mesh = SubResource("PlaneMesh_to4tk")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0481236, 0.998581, -0.0227926, -0.998841, -0.048087, 0.00214998, 0.0010509, 0.0228697, 0.999738, 2.65403, 0.694303, 1.53968)
+mesh = SubResource("PlaneMesh_to4tk")
+
+[node name="Wall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00246466, 0.00648566, -0.999976, -0.998563, 0.0535147, 0.00280826, 0.0535317, 0.998546, 0.00634445, 1.7204, 0.685501, 2.61236)
 mesh = SubResource("PlaneMesh_to4tk")
 
 [node name="wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.00364126, 0.0695627, -0.997571, -0.999985, -0.00431533, 0.00334914, -0.00407188, 0.997568, 0.0695774, 0.0775314, 0.690407, -0.982535)
 mesh = SubResource("PlaneMesh_to4tk")
 
-[node name="Box" type="MeshInstance3D" parent="."]
+[node name="house 1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33802, 0)
 mesh = SubResource("BoxMesh_0jsbj")
+surface_material_override/0 = SubResource("StandardMaterial3D_eso0h")
 
 [node name="Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31067, 0)
 mesh = SubResource("PrismMesh_q6bo7")
+surface_material_override/0 = SubResource("StandardMaterial3D_trumw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="House 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996573, 0.0827212, 0, -0.0827212, 0.996573, 1.9018, 0.506964, 1.96814)
+mesh = SubResource("TubeTrailMesh_e7awo")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Roof 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78825, 1.48082, 1.8711)
+mesh = SubResource("PrismMesh_j0tu7")
+surface_material_override/0 = SubResource("StandardMaterial3D_3xb3d")
