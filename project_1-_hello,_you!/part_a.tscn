@@ -45,11 +45,13 @@ albedo_color = Color(1, 0.435294, 1, 1)
 background_mode = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 1.47
+glow_enabled = true
 
 [node name="Part_A" type="Node3D"]
 
 [node name="PlaceholderFloor" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.67902, 0, 0, 0, 1, 0, 0, 0, 2.65012, 0, -0.0137864, 0)
+visible = false
 mesh = SubResource("PlaneMesh_m6jki")
 surface_material_override/0 = SubResource("StandardMaterial3D_ys316")
 
